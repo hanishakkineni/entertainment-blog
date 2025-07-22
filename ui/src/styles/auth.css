@@ -1,0 +1,262 @@
+:root {
+  --primary-font: "DM Sans", sans-serif;
+  --heading-font: "Marcellus", serif;
+  --primary-color: #000000;
+  --background-color: #ffffff;
+  --secondary-color: #f3f4f6;
+  --signal-green: #039608;
+  --signal-red: #ff4444;
+  --hover-color: #181818;
+}
+/* Container Styles */
+.login-container,
+.register-container {
+  font-family: var(--primary-font);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--background-color);
+}
+
+/* Card Styles */
+.login-card,
+.register-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 32px 24px;
+  background-color: var(--background-color);
+}
+
+.logoPic {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150px;
+}
+/* Title Styles */
+.login-title,
+.register-title {
+  font-family: var(--heading-font);
+  text-align: center;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 32px;
+  font-size: 36px;
+}
+
+/* Form Styles */
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Input Styles */
+input,
+select {
+  padding: 10px;
+  border-radius: 7px;
+  border: solid 1px var(--secondary-color);
+  background: var(--secondary-color);
+  font-size: 13px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border: solid 1px var(--primary-color);
+  outline: none;
+  background: var(--background-color);
+}
+
+input.error {
+  border: 1px solid var(--signal-red);
+  background: #fff5f5;
+}
+
+/* Error Styles */
+.error-message {
+  color: var(--signal-red);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.error-alert {
+  background-color: #fff5f5;
+  color: var(--signal-red);
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Button Styles */
+.submit-button {
+  background-color: var(--primary-color);
+  align-items: center;
+  color: var(--background-color);
+  border: none;
+  border-radius: 60px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px;
+}
+
+.submit-button:hover {
+  background-color: var(--hover-color);
+}
+
+.submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.register-link,
+.login-link {
+  text-align: center;
+  color: #6b7280;
+  margin-top: 16px;
+}
+
+.register-link,
+.login-link {
+  font-size: 14px;
+}
+
+.forgot-password {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0;
+}
+
+.toast-container {
+  width: 50%;
+  max-width: 270px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.toast-notification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid var(--secondary-color);
+  color: var(--primary-color);
+  padding: 12px 18px;
+  border-radius: 50px;
+  animation: slideIn 0.3s ease-out;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.toast-notification p {
+  margin: 0;
+  font-size: 16px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.toast-notification svg {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: var(--signal-green);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card,
+  .register-card {
+    padding: 24px 16px;
+  }
+
+  .login-title,
+  .register-title {
+    font-size: 24px;
+  }
+
+  .role-buttons {
+    flex-direction: column;
+  }
+
+  input,
+  select,
+  .submit-button {
+    padding: 14px;
+  }
+} 
+
+@media (max-width: 640px) {
+  .toast-container {
+    top: 16px;
+    width: 95%;
+  }
+  
+  .toast-notification {
+    padding: 10px 14px;
+  }
+  
+  .toast-notification p {
+    font-size: 13px;
+  }
+  
+  .toast-notification svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .toast-container {
+    top: 12px;
+    width: 98%;
+  }
+  
+  .toast-notification {
+    padding: 8px 12px;
+  }
+  
+  .toast-notification p {
+    font-size: 12px;
+  }
+  
+  .toast-notification svg {
+    width: 16px;
+    height: 16px;
+  }
+}
